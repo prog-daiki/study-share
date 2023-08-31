@@ -6,7 +6,13 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useEffect, useState } from "react";
 import Sidebar from "./sidebar/sidebar";
 
-const MobileSidebar = () => {
+interface MobileSidebarProps {
+  userId: string | null;
+}
+
+const MobileSidebar: React.FC<MobileSidebarProps> = ({
+  userId,
+}) => {
 
   const [isMounted, setIsMounted] = useState(false);
 
@@ -26,7 +32,7 @@ const MobileSidebar = () => {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="p-0 bg-black">
-        <Sidebar />
+        <Sidebar userId={userId} />
       </SheetContent>
     </Sheet>
   )

@@ -22,7 +22,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
       </div>
       <main className="w-full md:w-2/4 h-full bg-black text-white">
         <div className="md:hidden">
-          <Navbar />
+          <Navbar userId={userId} />
         </div>
         {children}
       </main>

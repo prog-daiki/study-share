@@ -1,9 +1,15 @@
 import MobileSidebar from "./mobile-sidebar"
 
-const Navbar = () => {
+interface NavbarProps {
+  userId: string | null;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  userId,
+}) => {
   return (
     <div className="flex items-center p-4">
-      <MobileSidebar />
+      <MobileSidebar userId={userId} />
     </div>
   )
 }
